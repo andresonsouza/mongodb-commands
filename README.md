@@ -102,7 +102,17 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 **atualizando valores de um único registro**
 
 Segue o mesmo padrão de filtro seguido de valores atuais.
+
 ```sql=
 > db.students.updateOne({name:"Klay"},{$set:{age: 35}})
 { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+```
+
+**removendo um registro**
+
+Para remover foi passado o id.
+
+```sql=
+> db.students.remove({_id: ObjectId("5f6abf76b6f5e07db292a89a")})
+WriteResult({ "nRemoved" : 1 })
 ```
