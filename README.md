@@ -76,7 +76,7 @@ Segue comando e exemplo de retorno:
 }
 ```
 
-**filtrand uma busca**
+**filtrando uma busca**
 
 Segue comando e exemplo de retorno:
 
@@ -87,5 +87,13 @@ Segue comando e exemplo de retorno:
 	"name" : "Bob",
 	"age" : 22
 }
+```
 
+**atualizando valores**
+
+O primeiro objeto é o filtro e o segundo são os valores atuais
+
+```sql=
+> db.students.update({name:"Andreson"},{name:"Andreson Souza", age:34})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
