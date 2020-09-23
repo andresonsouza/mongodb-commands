@@ -89,11 +89,20 @@ Segue comando e exemplo de retorno:
 }
 ```
 
-**atualizando valores**
+**atualizando valores de forma geral**
 
-O primeiro objeto é o filtro e o segundo são os valores atuais
+O primeiro objeto é o filtro e o segundo são os valores atuais.
+Essa forma de atualização não é muito recomendada pois é feita a atualização de todo o registro.
 
 ```sql=
 > db.students.update({name:"Andreson"},{name:"Andreson Souza", age:34})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+```
+
+**atualizando valores de um único registro**
+
+Segue o mesmo padrão de filtro seguido de valores atuais.
+```sql=
+> db.students.updateOne({name:"Klay"},{$set:{age: 35}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
 ```
